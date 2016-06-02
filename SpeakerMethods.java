@@ -193,7 +193,7 @@ public class SpeakerMethods extends Device{
 		case AUDIO_SAMPLERATE: formatSampleRate = (float)value; break;
 		case AUDIO_SAMPLESIZEINBITS: formatSampleSizeInBits = (int)value; break;
 		case AUDIO_WRITEBYTESIZE: byteSize = (int)value; break;
-		case AUDIO_SOURCEBYTES: sourceBytes = new byte[sourceLine.getBufferSize()]; break; //updated
+		case AUDIO_SOURCEBYTES: sourceBytes = new byte[sourceLine.getBufferSize()]; System.out.println("Source Buffersize: "+sourceLine.getBufferSize());break; //updated
 		} 
 	}
 

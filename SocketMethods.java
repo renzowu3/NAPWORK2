@@ -182,8 +182,11 @@ public class SocketMethods extends Device{
 	Object read(int param) {
 		if(param == READ_BYTES && readMode == 0){
 			try {	
+				System.out.println("Inside read bytes");
+				System.out.println("after byte array:" + bytearray.length);
 				dis.read(bytearray); //edited
-				System.out.println("read bytes");
+				//System.out.println("after byte array:" + bytearray.length);
+				System.out.println("read bytes: " + bytearray);
 				return bytearray;
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -229,11 +232,14 @@ public class SocketMethods extends Device{
 			e.printStackTrace();
 		} break;
 		case READY_READ_BYTES: try { //updated
+			System.out.println("inside setconfig");
 			dis = new DataInputStream(soc.getInputStream());
 			//bis = new BufferedInputStream(dis);
-			size = dis.readInt();
+			System.out.println("inputstream done");
+			//size = dis.readInt();
 			System.out.println("read Int:" + size);
 			readMode = 0;
+			System.out.println("readmode: " + readMode);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} break;

@@ -40,12 +40,12 @@ public class SerialMethods extends Device {
 
 	@Override
 	void write(int param) {
-		serialPort.writeBytes(msg.getBytes());
+		//serialPort.writeBytes();
 	}
 
 	@Override
 	Object read(int param) {
-		buffer = serialPort.readBytes();
+		//buffer = serialPort.readBytes();
 		return null;
 	}
 
@@ -70,5 +70,6 @@ public class SerialMethods extends Device {
 		case SERIAL_STOPBITS: return stopBits;
 		case SERIAL_PARITY: return parity;
 		}
-
+		return null;
 	}
+}
